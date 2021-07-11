@@ -1,3 +1,8 @@
+# About grpc-poc
+
+This grpc-poc github project is a sample hello world working example.
+
+
 # What Is gRPC?
 gRPC is a high performance, open-source universal RPC framework. By default it uses Protocol Buffers to define exposed services.
 
