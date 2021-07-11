@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import io.grpc.stub.StreamObserver;
 
 /**
  *
@@ -62,15 +61,5 @@ public class HelloWorldServer {
     final HelloWorldServer server = new HelloWorldServer();
     server.start();
     server.blockUntilShutdown();
-  }
-
-  static class GreeterImpl extends GreeterGrpc.GreeterImplBase {
-
-    @Override
-    public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
-      HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
-      responseObserver.onNext(reply);
-      responseObserver.onCompleted();
-    }
   }
 }
